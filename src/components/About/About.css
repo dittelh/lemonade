@@ -1,0 +1,261 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Raleway;
+}
+
+section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0a415e;
+  background-image: linear-gradient(
+    180deg,
+    #0a415e 0%,
+    #0a415e 70%,
+    #0000003f 100%
+  );
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  background: linear-gradient(180deg, #c6e1e5 0%, #91c0c7 100%);
+  backdrop-filter: blur(30px);
+  border-radius: 20px;
+  width: min(900px, 100%);
+  box-shadow: 0 0.5px 0 1px rgba(255, 255, 255, 0.23) inset,
+    0 1px 0 0 rgba(255, 255, 255, 0.66) inset, 0 4px 16px rgba(0, 0, 0, 0.12);
+  z-index: 10;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 450px;
+  padding: 0 35px;
+  text-align: justify;
+}
+
+.info p {
+  color: #000000;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active,
+.btn:visited {
+  transition-timing-function: cubic-bezier(0.6, 4, 0.3, 0.8);
+  animation: gelatine 0.5s 1;
+}
+
+@keyframes gelatine {
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    transform: scale(0.95, 1.05);
+  }
+}
+
+/* SWIPER */
+
+.swiper {
+  width: 250px;
+  height: 450px;
+  padding: 50px 0;
+}
+
+.swiper-slide {
+  position: relative;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.swiper-slide h2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  margin: 0 0 20px 20px;
+}
+
+/* ANIMATED BACKGROUND */
+
+.circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.circles li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  background-image: linear-gradient(225deg, #c6e1e5 0%, #e8cf03 100%);
+  animation: animate 25s linear infinite;
+  bottom: -150px;
+}
+
+.circles li:nth-child(1) {
+  left: 5%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+
+.circles li:nth-child(2) {
+  left: 10%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 2s;
+  animation-duration: 12s;
+}
+
+.circles li:nth-child(3) {
+  left: 70%;
+  width: 55px;
+  height: 55px;
+  animation-delay: 4s;
+}
+
+.circles li:nth-child(4) {
+  left: 78%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 0s;
+  animation-duration: 18s;
+}
+
+.circles li:nth-child(5) {
+  left: 89%;
+  width: 40px;
+  height: 40px;
+  animation-delay: 0s;
+}
+
+.circles li:nth-child(6) {
+  left: 75%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3s;
+}
+
+.circles li:nth-child(7) {
+  left: 35%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 7s;
+}
+
+.circles li:nth-child(8) {
+  left: 23%;
+  width: 35px;
+  height: 35px;
+  animation-delay: 15s;
+  animation-duration: 45s;
+}
+
+.circles li:nth-child(9) {
+  left: 20%;
+  width: 103px;
+  height: 103px;
+  animation-delay: 2s;
+  animation-duration: 35s;
+}
+
+.circles li:nth-child(10) {
+  left: 90%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 0s;
+  animation-duration: 11s;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 1;
+    border-radius: 5% 70% 20%;
+  }
+
+  70% {
+    opacity: 1;
+    border-radius: 5% 70% 20%;
+  }
+
+  100% {
+    transform: translateY(0) rotate(0);
+    opacity: 0;
+    border-radius: 5% 70% 20%;
+  }
+}
+
+@media (max-width: 750px) {
+  .content {
+    flex-direction: column-reverse;
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+    width: 85vw;
+  }
+
+  .btn {
+    margin: 10px auto 40px;
+  }
+
+  .swiper {
+    width: 150px;
+    height: 150px;
+    padding: 0px 0;
+    margin-top: 2rem;
+    box-shadow: none;
+  }
+}
+
+.swiper-slide:nth-child(1n) {
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
+    url('../../assets/img/drinks/lemonade.jpg') no-repeat 50% 50% / cover;
+}
+
+.swiper-slide:nth-child(2n) {
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
+    url('../../assets/img/drinks/mojito.jpg') no-repeat 50% 50% / cover;
+}
+
+.swiper-slide:nth-child(3n) {
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
+    url('../../assets/img/drinks/orange.jpg') no-repeat 50% 0% / cover;
+}
+
+.swiper-slide:nth-child(4n) {
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
+    url('../../assets/img/drinks/strawberry.jpg') no-repeat 50% 50% / cover;
+}

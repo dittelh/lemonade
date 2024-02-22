@@ -1,0 +1,57 @@
+/* Slideshow */
+.slideshowImg {
+  height: 30rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Item */
+
+.card-custom {
+  background-color: #c6e1e5;
+  border: none;
+  /* box-shadow: 0px 0px 10px #0a415e41; */
+}
+
+.drinksImg {
+  height: 50vw;
+  object-fit: cover;
+  padding: 0.5rem;
+}
+
+.btn-primary {
+  --bs-btn-color: #169149;
+  --bs-btn-bg: #16914900;
+  --bs-btn-border-color: #169149;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #106b36;
+  --bs-btn-hover-border-color: #106b36;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #169149;
+  --bs-btn-active-border-color: #0a53be;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #169149;
+  --bs-btn-disabled-border-color: #169149;
+}
+
+.price-custom {
+  font-family: RalewayBold;
+  font-size: 1.5rem;
+  background-color: #e8cd0369;
+  border-radius: 100%;
+  width: 5rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .drinksImg {
+    height: 20vw;
+    object-fit: cover;
+    padding: 0.5rem;
+  }
+}
