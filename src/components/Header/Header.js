@@ -8,9 +8,13 @@ import Badge from 'react-bootstrap/Badge';
 import Image from 'react-bootstrap/Image';
 import Logo from '../../assets/img/logo.png';
 import './Header.css';
+import { CartContext } from '../../App';
+import { useContext } from 'react';
 
+const Header = () => {
+  const cart = useContext(CartContext);
+  console.log(cart)
 
-const Header = ({ cartCount }) => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary fixed-top navbar-custom">
       <Container fluid>
@@ -46,8 +50,7 @@ const Header = ({ cartCount }) => {
           <Link to="/kurv">
             <Button variant="outline-success">
               Kurv
-              {/* <IoCart /> */}
-              <Badge className='badge' bg="success">{cartCount}</Badge>
+              <Badge className='badge' bg="success">{cart.cartItems.length}</Badge>
             </Button>
           </Link>
         </Navbar.Collapse>

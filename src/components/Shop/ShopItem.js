@@ -4,8 +4,10 @@ import './Shop.css';
 
 const ShopItem = ({ item, updateCart }) => {
   const handleAddToCart = () => {
-    updateCart();
+    updateCart(item);
   };
+
+  const isInCart = updateCart === undefined;
 
   return (
     <Card className="card-custom">
@@ -13,13 +15,13 @@ const ShopItem = ({ item, updateCart }) => {
       <Card.Body>
         <Card.Title className="Cronus-font">{item.title}</Card.Title>
         <Card.Text>{item.description}</Card.Text>
-        <Card.Text className='price-custom'>{item.price} kr.</Card.Text>
-        <div className='mb-4'>
-          
-        </div>
+        <Card.Text className="price-custom">{item.price} kr.</Card.Text>
+        <div className="mb-4"></div>
+        {!isInCart && (
           <Button variant="primary" onClick={handleAddToCart}>
             Læg i kurv
           </Button>
+        )}
       </Card.Body>
     </Card>
   );

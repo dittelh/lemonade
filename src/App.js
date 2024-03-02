@@ -6,22 +6,44 @@ import Header from './components/Header/Header';
 import Cart from './components/Cart/Cart';
 import Recipes from './components/Recipes/Recipes';
 import About from './components/About/About';
+import { createContext } from 'react';
+
+export const CartContext = createContext(null);
 
 function App() {
-  const [cartCount, setCartCount] = useState(0);
+  const [cartItems, setCartItems] = useState([]);
 
-  const updateCart = () => {
-    setCartCount(cartCount + 1);
+  const cart = {
+    cartItems: cartItems,
+    setCartItems: (value) => {
+      setCartItems(oldItems => [...oldItems, value]);
+    },
   };
 
   return (
     <Router>
-      <Header cartCount={cartCount} />
+      <CartContext.Provider value={cart}>
+        <Header cartItems={cartItems} />
+      </CartContext.Provider>
       <Routes>
-        <Route  path="/" element={<Shop updateCart={updateCart}/>} />
+        <Route
+          path="/"
+          element={
+            <CartContext.Provider value={cart}>
+              <Shop />
+            </CartContext.Provider>
+          }
+        />
         <Route path="/opskrifter" element={<Recipes />} />
         <Route path="/omos" element={<About />} />
-        <Route path="/kurv" element={<Cart />} />
+        <Route
+          path="/kurv"
+          element={
+            <CartContext.Provider value={cart}>
+              <Cart />
+            </CartContext.Provider>
+          }
+        />
       </Routes>
     </Router>
   );
