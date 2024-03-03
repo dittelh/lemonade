@@ -43,9 +43,11 @@ const About = () => {
               invitation til at nyde hverdagens simple glæder og dele ren
               velvære med dem omkring os.
             </p>
-            <Link to="/"><Button variant="primary" class="btn">
-              SHOPPEN
-            </Button></Link>
+            <Link to="/">
+              <Button variant="primary" class="btn">
+                SHOPPEN
+              </Button>
+            </Link>
           </div>
           <div class="swiper">
             <div class="swiper-wrapper">

@@ -13,7 +13,6 @@ import { useContext } from 'react';
 
 const Header = () => {
   const cart = useContext(CartContext);
-  console.log(cart)
 
   return (
     <Navbar expand="lg" className="bg-body-tertiary fixed-top navbar-custom">

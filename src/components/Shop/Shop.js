@@ -47,10 +47,9 @@ const Shop = () => {
       <div className="container">
         <h1 className="mt-5 Cronus-font">Shoppen</h1>
         <div className="row my-5">
-          {items.map((item, i) => (
-            <div key={i} className="col-6 col-lg-3 mb-5">
+          {items.map((item) => (
+            <div key={item.id} className="col-6 col-lg-3 mb-5">
               <ShopItem
-                key={item.id}
                 item={item}
                 updateCart={cart.setCartItems}
               />

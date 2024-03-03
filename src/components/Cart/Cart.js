@@ -8,6 +8,7 @@ import { Card } from 'react-bootstrap';
 
 const Cart = () => {
   const cart = useContext(CartContext);
+
   var totalPrice = 0;
   for (let i = 0; i < cart.cartItems.length; i++) {
     totalPrice += cart.cartItems[i].price;

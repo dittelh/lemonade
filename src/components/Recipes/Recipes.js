@@ -8,6 +8,7 @@ const Recipes = () => {
   const [recipe, setRecipe] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
+  // Kører når staterne ændres
   useEffect(() => {
     getRecipe();
   }, []);
