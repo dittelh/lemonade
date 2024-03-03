@@ -16,7 +16,10 @@ function App() {
   const cart = {
     cartItems: cartItems,
     setCartItems: (value) => {
-      setCartItems(oldItems => [...oldItems, value]);
+      setCartItems((oldItems) => [...oldItems, value]);
+    },
+    buyItems: () => {
+      setCartItems([]);
     },
   };
 
