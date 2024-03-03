@@ -41,11 +41,11 @@ const Header = () => {
           <Form className="d-flex mx-2">
             <Form.Control
               type="search"
-              placeholder="Search"
+              placeholder="Søg efter drink"
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-success">Search</Button>
+            <Button variant="outline-success">Søg</Button>
           </Form>
           <Link to="/kurv">
             <Button variant="outline-success">

@@ -54,7 +54,7 @@ const Recipes = () => {
         <div className="col-6">
           <h3>{recipe.strCategory}</h3>
           <p>{recipe.strDrink}</p>
-          <img className="drinksImg" src={recipe.strDrinkThumb} alt="Drinks" />
+          <img className="drinksRecipesImg" src={recipe.strDrinkThumb} alt="Drinks" />
         </div>
         <div className="col-6">
           <p className="pBold">Ingredienser</p>
