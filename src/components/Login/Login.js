@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Login.css';
 import Button from 'react-bootstrap/Button';
 import { useAuth } from '../Auth/AuthProvider';
@@ -11,6 +11,10 @@ const Login = () => {
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+
+  useEffect(()=> {
+    auth.logout()
+  }, [])
 
   const login = (e) => {
     e.preventDefault();

@@ -8,21 +8,18 @@ import Image from 'react-bootstrap/Image';
 import Logo from '../../assets/img/logo.png';
 import './Header.css';
 import { CartContext } from '../../App';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useAuth } from '../Auth/AuthProvider';
 import { useNavigate } from 'react-router-dom';
-
 
 const Header = () => {
   const cart = useContext(CartContext);
   const auth = useAuth();
   const navigate = useNavigate();
 
-
   const logout = () => {
-    auth.logout();
     navigate('/login');
-  }
+  };
 
   return (
     <Navbar expand="lg" className="bg-body-tertiary fixed-top navbar-custom">
@@ -54,7 +51,11 @@ const Header = () => {
               </Button>
             </Link>
           ) : (
-            <Button variant="outline-success" className="mx-3 logout" onClick={logout()}>
+            <Button
+              variant="outline-success"
+              className="mx-3 logout"
+              onClick={logout}
+            >
               Log ud
             </Button>
           )}
