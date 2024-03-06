@@ -12,7 +12,12 @@ function ControlledCarousel() {
   };
 
   return (
-    <Carousel className="mt-5" activeIndex={index} onSelect={handleSelect}>
+    <Carousel
+      interval={12000}
+      className="mt-5"
+      activeIndex={index}
+      onSelect={handleSelect}
+    >
       <Carousel.Item>
         <Image className="slideshowImg" fluid src={Lemons} />
       </Carousel.Item>

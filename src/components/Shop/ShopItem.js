@@ -10,13 +10,14 @@ const ShopItem = ({ item, updateCart }) => {
   const isInCart = updateCart === undefined;
 
   return (
-    <Card className="card-custom">
+    <Card className="card-custom button">
       <Card.Img className="drinksImg" variant="top" src={item.image} />
-      <Card.Body>
+      <Card.Body className="button">
         <Card.Title className="Cronus-font">{item.title}</Card.Title>
-        <Card.Text>{item.description}</Card.Text>
-        <Card.Text className="price-custom">{item.price} kr.</Card.Text>
-        <div className="mb-4"></div>
+        <div className='priceAndDesc'>
+          <Card.Text className='description'>{item.description}</Card.Text>
+          <Card.Text className="price-custom">{item.price} kr.</Card.Text>
+        </div>
         {!isInCart && (
           <Button variant="primary" onClick={handleAddToCart}>
             Læg i kurv
