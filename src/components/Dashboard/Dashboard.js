@@ -3,11 +3,16 @@ import './Dashboard.css';
 import DashboardItems from './DashboardItems';
 
 const Dashboard = () => {
+  let totalOrders = 0;
+  if (localStorage.getItem('orders') !== null) {
+    totalOrders = JSON.parse(localStorage.getItem('orders')).length;
+  }
+
   const dashboardItems = [
     {
       id: 1,
-      title: 'Ordre',
-      description: 'Her skal der stå hvor mange ordre.',
+      title: 'Antal ordre:',
+      description: totalOrders,
     },
     {
       id: 2,

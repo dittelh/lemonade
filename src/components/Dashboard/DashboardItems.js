@@ -4,7 +4,6 @@ import { Card } from 'react-bootstrap';
 
 
 const DashboardItems = ({dashboardItem}) => {
-    console.log(dashboardItem)
   return (
     <Card className="card-custom dashCard">
       <Card.Body className='dashCardBody'>

@@ -15,6 +15,7 @@ const Cart = () => {
   }
 
   const [isBought, setIsBought] = useState(false);
+  
   const handleBuyItems = () => {
     cart.buyItems();
     setIsBought(true);

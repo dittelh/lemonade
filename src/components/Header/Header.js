@@ -51,13 +51,19 @@ const Header = () => {
               </Button>
             </Link>
           ) : (
-            <Button
-              variant="outline-success"
-              className="mx-3 logout"
-              onClick={logout}
-            >
-              Log ud
-            </Button>
+            <>
+              <Link to="/dashboard">
+                <Button variant="outline-success">Dashboard</Button>
+              </Link>
+
+              <Button
+                variant="outline-success"
+                className="mx-3 logout"
+                onClick={logout}
+              >
+                Log ud
+              </Button>
+            </>
           )}
 
           <Link to="/kurv">
