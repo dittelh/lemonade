@@ -3,22 +3,34 @@ import './Dashboard.css';
 import DashboardItems from './DashboardItems';
 
 const Dashboard = () => {
-  let totalOrders = 0;
+  let orders = [];
   if (localStorage.getItem('orders') !== null) {
-    totalOrders = JSON.parse(localStorage.getItem('orders')).length;
+    orders = JSON.parse(localStorage.getItem('orders'));
   }
+
+  const totalPrice = () => {
+    let totalPrice = 0;
+    for (let i = 0; i < orders.length; i++) {
+      const order = orders[i];
+      for (let j = 0; j < order.length; j++) {
+        const orderItem = order[j];
+        totalPrice += orderItem.price;
+      }
+    } 
+    return totalPrice;
+  };
 
   const dashboardItems = [
     {
       id: 1,
       title: 'Antal ordre:',
-      description: totalOrders,
+      description: orders.length,
     },
     {
       id: 2,
-      title: 'Profit',
+      title: 'Omsætning:',
       description:
-        'Her skal der stå hvor meget profit, der er lavet med denne million forretning.',
+        totalPrice() + ' kr.',
     },
   ];
 
