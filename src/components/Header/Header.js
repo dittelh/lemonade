@@ -27,10 +27,10 @@ const Header = () => {
         <Navbar.Brand as={Link} to="/">
           <Image className="logo" src={Logo}></Image>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
+        <Navbar.Toggle aria-controls="" />
+        <Navbar.Collapse id="">
           <Nav
-            className="me-auto my-2 my-lg-0"
+            className="me-auto nav-links my-lg-0"
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
@@ -46,19 +46,19 @@ const Header = () => {
           </Nav>
           {auth.user === null ? (
             <Link to="/login">
-              <Button variant="outline-success" className="mx-3">
+              <Button variant="outline-success" className="header-btn mx-3">
                 Log ind
               </Button>
             </Link>
           ) : (
             <>
               <Link to="/dashboard">
-                <Button variant="outline-success">Dashboard</Button>
+                <Button variant="outline-success" className='header-btn dashBtn'>Dashboard</Button>
               </Link>
 
               <Button
                 variant="outline-success"
-                className="mx-3 logout"
+                className="mx-3 logout header-btn"
                 onClick={logout}
               >
                 Log ud
@@ -67,7 +67,7 @@ const Header = () => {
           )}
 
           <Link to="/kurv">
-            <Button variant="outline-success">
+            <Button variant="outline-success" className='header-btn'>
               Kurv
               <Badge className="badge" bg="success">
                 {cart.cartItems.length}

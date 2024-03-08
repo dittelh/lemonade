@@ -27,8 +27,9 @@ const About = () => {
   return (
     <div>
       <section>
-        <div class="content">
-          <div class="info">
+        <div className="content">
+          <div className="info">
+          <h1 className="Cronus-font">Om os</h1>
             <p>
               Vores lemonader er håndlavede kunstværker, der leverer den
               perfekte balance mellem sødme, syrlighed og forfriskning.
@@ -44,33 +45,33 @@ const About = () => {
               velvære med dem omkring os.
             </p>
             <Link to="/">
-              <Button variant="primary" class="btn">
+              <Button variant="primary" className="btn">
                 SHOPPEN
               </Button>
             </Link>
           </div>
-          <div class="swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
+          <div className="swiper">
+            <div className="swiper-wrapper">
+              <div className="swiper-slide">
                 <h2>KLASSISK LEMONADE</h2>
               </div>
 
-              <div class="swiper-slide">
+              <div className="swiper-slide">
                 <h2>JORDBÆR-NADE</h2>
               </div>
 
-              <div class="swiper-slide">
+              <div className="swiper-slide">
                 <h2>MOJITO</h2>
               </div>
 
-              <div class="swiper-slide">
+              <div className="swiper-slide">
                 <h2>MIXONADE</h2>
               </div>
             </div>
           </div>
         </div>
 
-        <ul class="circles">
+        <ul className="circles">
           <li></li>
           <li></li>
           <li></li>

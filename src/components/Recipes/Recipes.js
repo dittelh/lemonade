@@ -45,19 +45,18 @@ const Recipes = () => {
     <div className="container margin-custom mb-5">
       <div className="divFlex">
         <h1 className="Cronus-font">Opskrifter</h1>
-        <Button variant="primary" onClick={getRecipe}>
+        <Button className='recipeBtn' variant="primary" onClick={getRecipe}>
           Find ny opskrift
         </Button>
       </div>
 
-      {/* <h2>{recipe.strAlcoholic}</h2> */}
       <div className="drinksImgContainer row">
-        <div className="col-6">
+        <div className="col-md-6 col-12">
           <h3>{recipe.strCategory}</h3>
           <p>{recipe.strDrink}</p>
           <img className="drinksRecipesImg" src={recipe.strDrinkThumb} alt="Drinks" />
         </div>
-        <div className="col-6">
+        <div className="col-md-6 col-12">
           <p className="pBold">Ingredienser</p>
           {recipe.strIngredient1 !== null && <p>{recipe.strIngredient1}</p>}
           {recipe.strMeasure1 !== null && <p>{recipe.strMeasure1}</p>}

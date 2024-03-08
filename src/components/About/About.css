@@ -259,3 +259,10 @@ section {
   background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
     url('../../assets/img/drinks/strawberry.jpg') no-repeat 50% 50% / cover;
 }
+
+
+@media (min-width: 800px){
+  .content{
+    margin-top: 8rem;
+  }
+}

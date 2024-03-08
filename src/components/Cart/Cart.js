@@ -15,7 +15,7 @@ const Cart = () => {
   }
 
   const [isBought, setIsBought] = useState(false);
-  
+
   const handleBuyItems = () => {
     cart.buyItems();
     setIsBought(true);
@@ -35,16 +35,22 @@ const Cart = () => {
   }
 
   return (
-    <div className="container row mt-5 pt-5 mx-auto">
+    <div className="container mt-5 pt-5">
       <h1 className="mt-5 Cronus-font">Din kurv</h1>
-      {cart.cartItems.map((item, i) => (
-        <div key={i} className="col-6 col-lg-3 mb-5">
-          <ShopItem key={item.id} item={item} />
-        </div>
-      ))}
+      <div className="row">
+        {cart.cartItems.map((item, i) => (
+          <div key={i} className="col-6 col-lg-3 mb-5">
+            <ShopItem key={item.id} item={item} />
+          </div>
+        ))}
+      </div>
       <Card className="bestilContainer">
         <p>Pris i alt: {totalPrice} kr.</p>
-        <Button variant="primary" onClick={handleBuyItems}>
+        <Button
+          className="bestilBtn"
+          variant="primary"
+          onClick={handleBuyItems}
+        >
           Bestil
         </Button>
       </Card>
